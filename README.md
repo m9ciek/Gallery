@@ -1,5 +1,5 @@
 # PHOTO GALLERY PROJECT 
 
-Java + Spring MVC + Spring Boot + Spring Security
+Java + Spring MVC + Spring Boot + Spring Security + Spring Data
 
-Simple photo gallery with the possibility of adding new images and reading them dynamically.
+Simple photo gallery with the possibility of adding new images.
