@@ -1,5 +1,5 @@
 # PHOTO GALLERY PROJECT 
 
-Java + Spring MVC + Spring Boot + Spring Security + Spring Data
+Spring MVC + Spring Boot + Spring Security + Spring Data + Thymeleaf
 
-Simple photo gallery with the possibility of adding new images.
+Simple photo gallery with the possibility of uploading new images.
