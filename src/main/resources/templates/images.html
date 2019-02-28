@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+</head>
+<body>
+<table>
+
+    <tr th:each="image : ${images}">
+        <td><span th:text="${image.path +'/'+ image.fileName}"></span></td>
+        <td><img th:src="${'/uploads/'+image.fileName}" width="300" height="275"/></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
