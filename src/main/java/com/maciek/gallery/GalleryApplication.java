@@ -1,6 +1,5 @@
 package com.maciek.gallery;
 
-import com.maciek.gallery.service.ImageService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

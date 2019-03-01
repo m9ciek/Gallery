@@ -3,7 +3,6 @@ package com.maciek.gallery.controller;
 import com.maciek.gallery.entity.Image;
 import com.maciek.gallery.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,7 @@ public class ImageController {
 
     private ImageService imageService;
 
-    private static String uploadDirectory = System.getProperty("user.dir")+ "/src/main/resources/static/uploads/";
+    private static final String UPLOAD_DIRECTORY = System.getProperty("user.dir")+ "/uploads";
 
     @Autowired
     public ImageController(ImageService imageService) {
@@ -26,7 +25,6 @@ public class ImageController {
     public String mainPage(){
         return "index";
     }
-
 
     @RequestMapping("/upload")
     public String UploadPage(){
@@ -39,9 +37,7 @@ public class ImageController {
 
         Image image = new Image();
         image.setFileName(file.getOriginalFilename());
-        image.setPath(uploadDirectory);
-
-        modelAndView.addObject("image", image);
+        image.setPath(UPLOAD_DIRECTORY);
 
         try {
             imageService.uploadImage(file, image);

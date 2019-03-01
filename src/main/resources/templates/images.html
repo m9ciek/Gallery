@@ -6,12 +6,14 @@
 </head>
 <body>
 <table>
-
-    <tr th:each="image : ${images}">
-        <td><span th:text="${image.path +'/'+ image.fileName}"></span></td>
-        <td><img th:src="${'/uploads/'+image.fileName}" width="300" height="275"/></td>
+<div th:each="image : ${images}">
+    <tr>
+        <td th:text="${image.path +'/'+ image.fileName}"></td>
     </tr>
-
+    <tr>
+        <td><img th:src="${'/uploads/'+image.fileName}" width="30%" height=auto/></td>
+    </tr>
+</div>
 </table>
 
 </body>

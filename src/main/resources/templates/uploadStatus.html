@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:if="${image}">
-        <img th:src="@{${'/uploads/' + image.fileName}}"/>
+        <img th:src="@{${'/uploads/' + image.fileName}}" width="20%" height="20%"/>
     </div>
         <span><a href="/upload">Upload more Files</a></span>
 </body>

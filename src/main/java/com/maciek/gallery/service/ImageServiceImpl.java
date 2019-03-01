@@ -3,7 +3,7 @@ package com.maciek.gallery.service;
 import com.maciek.gallery.dao.ImageRepository;
 import com.maciek.gallery.entity.Image;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Files;
@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 
-@Component
+@Service
 public class ImageServiceImpl implements ImageService {
 
     @Autowired
@@ -26,7 +26,7 @@ public class ImageServiceImpl implements ImageService {
         if (tempImage == null) {
             imageRepository.save(image);
         } else {
-            throw new RuntimeException("Image already exists"); //Need to create own exception and handle it
+            throw new RuntimeException("Image with that name already exists"); //Need to create own exception and handle it
         }
     }
 
