@@ -8,4 +8,6 @@ import java.util.List;
 public interface ImageService {
     void uploadImage(MultipartFile file, Image image) throws Exception;
     List<Image> findImages();
+    void deleteImage(int imageId);
+
 }

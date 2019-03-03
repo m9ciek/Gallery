@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -34,4 +36,22 @@ public class ImageServiceImpl implements ImageService {
     public List<Image> findImages() {
         return imageRepository.findAll();
     }
+
+    @Override
+    public void deleteImage(int imageId) {
+        Optional<Image> result = imageRepository.findById(imageId);
+        if (result.isPresent()) {
+            Image image = result.get();
+            Path imagePath = Paths.get(image.getPath()+"\\"+image.getFileName());
+            try {
+                Files.delete(imagePath);
+                imageRepository.delete(image);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            throw new RuntimeException("Did not find an Image");
+        }
+    }
+
 }
