@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 public interface ImageRepository extends JpaRepository<Image, Integer> {
 
     @Query("SELECT f FROM Image f WHERE LOWER(f.fileName) = LOWER(:fileName)")
-     Image find(@Param("fileName") String fileName);
+    Image find(@Param("fileName") String fileName);
 
 }

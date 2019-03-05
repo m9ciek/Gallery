@@ -1,0 +1,9 @@
+/*<!-- flex bo zdjecia nie rowne -->*/
+.flex { 
+	display: flex; 
+	flex-wrap: wrap;	
+}
+body{
+	padding-top: 70px;
+	background-color: crimson;
+}

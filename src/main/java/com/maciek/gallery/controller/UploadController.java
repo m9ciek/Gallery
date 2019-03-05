@@ -38,7 +38,7 @@ public class UploadController {
             imageService.uploadImage(file, image);
         } catch (Exception e) {
             e.printStackTrace();
-            modelAndView.setViewName("error");
+            modelAndView.setViewName("uploadStatus");
             return modelAndView;
         }
 
