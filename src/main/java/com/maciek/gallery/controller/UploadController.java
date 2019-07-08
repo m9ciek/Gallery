@@ -3,6 +3,7 @@ package com.maciek.gallery.controller;
 import com.maciek.gallery.entity.Image;
 import com.maciek.gallery.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,8 +38,9 @@ public class UploadController {
         try {
             imageService.uploadImage(file, image);
         } catch (Exception e) {
-            e.printStackTrace();
+            String cause = e.getMessage();
             modelAndView.setViewName("uploadStatus");
+            modelAndView.addObject("cause", cause);
             return modelAndView;
         }
 

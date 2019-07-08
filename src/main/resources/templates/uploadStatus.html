@@ -8,6 +8,9 @@
     <div th:if="${image}">
         <img th:src="@{${'/uploads/' + image.fileName}}" width="20%" height="20%"/>
     </div>
+    <div th:if="${cause}">
+        <h3 th:text="${cause}"></h3>
+    </div>
         <span><a href="/images">Go Back to Gallery</a></span>
 </body>
 </html>

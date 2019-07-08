@@ -2,6 +2,7 @@ package com.maciek.gallery.service;
 
 import com.maciek.gallery.dao.ImageRepository;
 import com.maciek.gallery.entity.Image;
+import com.maciek.gallery.exceptions.ImageNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,7 +29,7 @@ public class ImageServiceImpl implements ImageService {
         if (tempImage == null) {
             imageRepository.save(image);
         } else {
-            throw new RuntimeException("Image with that name already exists"); //Need to create own exception and handle it
+            throw new ImageNotFoundException("Image with that name already exists");
         }
     }
 
